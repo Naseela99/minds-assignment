@@ -114,7 +114,7 @@ class Scraper:
                     "\xad", "")
                 current_data["content"]["title"]["link"] = urllib.parse.urljoin(
                     self.url, title.find("a")["href"])
-                current_data["content"]["article"] = self.get_and_parse_article(
+                current_data["article"] = self.get_and_parse_article(
                     current_data["content"]["title"]["link"])
 
                 excerpt = content.find("div", class_="gc__excerpt")

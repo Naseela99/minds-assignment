@@ -13,7 +13,7 @@ class Preprocessor:
 
     def combine_text(self, data: dict) -> str:
 
-        texts = [data["header"["title"]], data["header"]["sub_heading"]]
+        texts = [data["header"]["title"], data["header"]["sub_heading"]]
         texts = texts + data["body"]["paragraphs"]
 
         return "\n".join(texts)
