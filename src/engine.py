@@ -42,7 +42,23 @@ class Engine:
 
         print("Results saved to", os.path.join(self.data_path, "results.json"))
 
+        self.plot_results(os.path.join(self.data_path, "results.json"))
 
+    def plot_results(self, json_path: str):
+        with open(json_path, "r") as f:
+            results = json.load(f)
+        
+        fig = go.Figure(layout=dict(title="Sentiment Analysis", xaxis_title="Sentiment", yaxis_title="Score"))
+        scores = []
+        labels = []
+        for title, sentiment in results.items():
+            scores.append(sentiment["score"])
+            labels.append(sentiment["label"])
+        fig.add_trace(go.Scatter(y=scores, x=labels,
+                                        mode="markers"), )
+
+        fig.write_image(os.path.join(self.figure_path, "results.png"))
+        fig.write_html(os.path.join(self.figure_path, "results.html"))
 
 
 if __name__ == "__main__":
