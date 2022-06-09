@@ -1,5 +1,6 @@
 import json
 import os
+import time
 from tqdm import tqdm
 from .scraping import Scraper
 from .preprocessing import Preprocessor
@@ -62,6 +63,8 @@ class Engine:
 
 
 if __name__ == "__main__":
+    st = time.perf_counter()
     engine = Engine("https://www.aljazeera.com/where/mozambique/",
                     "data/", "figures/")
     engine.process()
+    print("Time taken:", time.perf_counter() - st)
