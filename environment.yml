@@ -10,3 +10,5 @@ dependencies:
   - torchvision
   - autopep8
   - plotly
+  - python-kaleido
+  - transformers

@@ -67,4 +67,4 @@ if __name__ == "__main__":
     engine = Engine("https://www.aljazeera.com/where/mozambique/",
                     "data/", "figures/")
     engine.process()
-    print("Time taken:", time.perf_counter() - st)
+    print("Time taken:", round(time.perf_counter() - st, 3), "seconds")
