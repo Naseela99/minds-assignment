@@ -1,4 +1,7 @@
 import json
+from typing import Dict, List
+from copy import deepcopy
+
 
 class Preprocessor:
     def __init__(self, input_file: str):
@@ -29,17 +32,18 @@ class Preprocessor:
         """
         return "".join(c for c in text if ord(c) < 128)
 
-    def preprocess(self):
-        """Preprocesses the data
+    def preprocess(self) -> List[Dict[str, str]]:
+        """preprocesses the data
 
         Returns:
-            Dict[str, str]: preprocessed data.
+            List[Dict[str, str]]: format: {"title": str, "text": str}
         """
         preprocessed_data = []
-        for page in self.data:
+        for page in deepcopy(self.data):
             article = page["article"]
             article.pop("figure")
             text = self.combine_text(article)
             text = self.only_english(text)
-            preprocessed_data.append(text)
+            title = page["content"]["title"]['text']
+            preprocessed_data.append({"title": title, "text": text})
         return preprocessed_data
