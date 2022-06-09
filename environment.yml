@@ -1,4 +1,4 @@
-name: scraper_env
+name: minds_env
 channels:
   - defaults
 dependencies:
@@ -6,9 +6,7 @@ dependencies:
   - requests
   - beautifulsoup4
   - tqdm
-  - torchaudio
   - pytorch
-  - cudatoolkit=10.2
   - torchvision
   - autopep8
   - plotly
