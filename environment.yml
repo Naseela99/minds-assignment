@@ -1,0 +1,14 @@
+name: scraper_env
+channels:
+  - defaults
+dependencies:
+  - python
+  - requests
+  - beautifulsoup4
+  - tqdm
+  - torchaudio
+  - pytorch
+  - cudatoolkit=10.2
+  - torchvision
+  - autopep8
+  - plotly
