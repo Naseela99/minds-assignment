@@ -14,7 +14,7 @@ class SentimentAnalyser:
 
     def analyse(self, text: str) -> Dict[str, Any]:
         text = self.preprocess(text)
-        return self.pipeline([text])
+        return self.pipeline([text])[0]
 
 
 if __name__ == '__main__':
