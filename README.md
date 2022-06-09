@@ -10,7 +10,8 @@ This repo is structured in four modules or components:
 Clone the repo:
 
 ```shell
-git clone https://github.com/Naseela99/minds-assignment.git```
+git clone https://github.com/Naseela99/minds-assignment.git
+```
 
 ```shell
 cd minds-assignment
